@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train Animation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .train-container {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            overflow: hidden;
+        }
+
+        .train {
+            position: absolute;
+            background-color: #f00;
+            width: 50px;
+            height: 20px;
+            transition: transform 2s linear;
+        }
+
+        #startButton, #stopButton {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Train Animation</h1>
+
+    <div class="train-container">
+        <div class="train" id="train"></div>
+    </div>
+
+    <button id="startButton">Start</button>
+    <button id="stopButton">Stop</button>
+
+    <script>
+        const train = document.getElementById('train');
+        const startButton = document.getElementById('startButton');
+        const stopButton = document.getElementById('stopButton');
+        let animationInterval;
+
+        startButton.addEventListener('click', () => {
+            train.style.transform = 'translateX(100%)';
+            animationInterval = setInterval(() => {
+                train.style.transition = 'none';
+                train.style.transform = 'translateX(-50px)';
+                setTimeout(() => {
+                    train.style.transition = 'transform 2s linear';
+                    train.style.transform = 'translateX(100%)';
+                }, 10);
+            }, 2000);
+        });
+
+        stopButton.addEventListener('click', () => {
+            clearInterval(animationInterval);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feedback Form</title>
+</head>
+<body>
+    <h1>Feedback Form</h1>
+    
+    <form id="feedbackForm" onsubmit="submitForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        
+        <label for="website">Website:</label>
+        <input type="url" id="website" name="website">
+        <br>
+        
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+        <br>
+        
+        <button type="submit">Submit</button>
+    </form>
+    
+    <div id="feedbackResult"></div>
+    
+    <script>
+        function submitForm(event) {
+            event.preventDefault(); // Prevent the default form submission behavior
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const website = document.getElementById('website').value;
+            const message = document.getElementById('message').value;
+            
+            // You can add code here to send the form data to your server or perform other actions
+            
+            // Display a confirmation message
+            const feedbackResult = document.getElementById('feedbackResult');
+            feedbackResult.innerHTML = `
+                <p>Thank you, ${name}!</p>
+                <p>Your feedback has been submitted successfully.</p>
+            `;
+            
+            // Clear the form fields
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('website').value = '';
+            document.getElementById('message').value = '';
+        }
+    </script>
+</body>
+</html>

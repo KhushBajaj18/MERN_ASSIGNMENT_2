@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #fffca1, #cf6ee4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+            width: 400px;
+        }
+
+        .form-control {
+            margin-bottom: 20px;
+        }
+
+        .form-control label {
+            display: block;
+            font-weight: 600;
+        }
+
+        .form-control input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .submit-button {
+            background: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .login-button {
+            display: block;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Form</h1>
+        <form action="https://ethnus.com/" method="post">
+            <div class="form-control">
+                <label for="firstName">First Name</label>
+                <input type="text" id="firstName" name="firstName" required>
+            </div>
+            <div class="form-control">
+                <label for="lastName">Last Name</label>
+                <input type="text" id="lastName" name="lastName" required>
+            </div>
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-control">
+                <label for="rePassword">Re-enter Password</label>
+                <input type="password" id="rePassword" name="rePassword" required>
+            </div>
+            <div class="form-control">
+                <label>Gender</label>
+                <input type="radio" id="male" name="gender" value="male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+                <label for="female">Female</label>
+            </div>
+            <div class="form-control">
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" required>
+            </div>
+            <div class="form-control">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-control">
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <div class="form-control">
+                <label for="city">City</label>
+                <input type="text" id="city" name="city" required>
+            </div>
+            <div class="form-control">
+                <label for="country">Country</label>
+                <input type="text" id="country" name="country" required>
+            </div>
+            <div class="form-control">
+                <label for="languages">Languages Known</label>
+                <input type="text" id="languages" name="languages" required>
+            </div>
+            <div class="form-control">
+                <input type="checkbox" id="declaration" name="declaration" required>
+                <label for="declaration">I hereby declare that all the information is true.</label>
+            </div>
+            <button type="submit" class="submit-button">Register Here</button>
+        </form>
+        <a href="https://ethnus.com/" class="login-button">Already registered? Login here</a>
